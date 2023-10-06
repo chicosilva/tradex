@@ -45,7 +45,6 @@ This document presents the basic information of the **API - Tradex  **. For more
    > **_NOTE:_** active the virtualenv: source .venv/bin/activate  
     ```shell
     pip install -r requirements.txt
-    pip install -r requirements-dev.txt
     ```
 
 
@@ -60,7 +59,7 @@ This document presents the basic information of the **API - Tradex  **. For more
      ```shell
      make localdb
      ```
-   - run migrations:
+   - python manage migrate:
      ``` make migrations ```
 
    - run the application

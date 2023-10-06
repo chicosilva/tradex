@@ -61,11 +61,11 @@ WSGI_APPLICATION = "tradex.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": config("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": config("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
-        "USER": config("SQL_USER", "user"),
-        "PASSWORD": config("SQL_PASSWORD", "password"),
-        "HOST": config("SQL_HOST", "localhost"),
-        "PORT": config("SQL_PORT", "5432"),
+        "NAME": config("DATABASE_NAME", BASE_DIR / "db.sqlite3"),
+        "USER": config("DATABASE_USER", "user"),
+        "PASSWORD": config("DATABASE_PASS", "password"),
+        "HOST": config("DATABASE_HOST", "localhost"),
+        "PORT": config("DATABASE_PORT", "5432"),
     }
 }
 

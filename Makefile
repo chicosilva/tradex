@@ -65,11 +65,6 @@ test:
 test-report:
 	@poetry run pytest --cov-report html --cov
 
-# Migrations
-migrations:
-	@poetry run alembic upgrade heads
-
-
 run_prod:
 	python manage.py makemigrations --merge --noinput
 	python manage.py migrate

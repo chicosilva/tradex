@@ -11,24 +11,20 @@ ENV PYTHONUNBUFFERED 1
 RUN apt update
 RUN apt-get install gcc build-essential -y
 
-# install dependencies
-# Install poetry:
-RUN pip3 install poetry && \
-    poetry config virtualenvs.create false
-
+COPY requirements.txt .
 
 # copy entrypoint.sh
 COPY ./entrypoint.sh .
 RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
 RUN chmod +x /usr/src/app/entrypoint.sh
 
+RUN pip install -r requirements.txt
+
 # copy project
 COPY . .
 
-RUN poetry lock --no-update && \
-    poetry install --only main
 
-EXPOSE 8080
+EXPOSE 8000
 
 #CMD ["sh", "-c", "make run_prod"]
 ENTRYPOINT ["./entrypoint.sh"]
