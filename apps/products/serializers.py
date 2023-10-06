@@ -4,27 +4,35 @@ from .models import PriceVariation, Product
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    id = serializers.UUIDField(read_only=True)
+
     class Meta:
         model = Product
         fields = '__all__'
 
 
 class PriceVariationDetailSerializer(serializers.ModelSerializer):
+    id = serializers.UUIDField(read_only=True)
+
     class Meta:
         model = PriceVariation
         fields = '__all__'
 
 
 class ProductDetailsSerializer(serializers.ModelSerializer):
+    id = serializers.UUIDField(read_only=True)
     pricevariations = PriceVariationDetailSerializer(many=True)
 
     class Meta:
         model = Product
-        fields = ['name', 'image', 'ean', 'min_price',
-                  'max_price', 'pricevariations']
+        fields = ['id', 'name', 'ean', 'min_price',
+                  'max_price', 'pricevariations', 'image']
 
 
 class PriceVariationSerializer(serializers.ModelSerializer):
+
+    id = serializers.UUIDField(read_only=True)
+
     class Meta:
         model = PriceVariation
         fields = '__all__'

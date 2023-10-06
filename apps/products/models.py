@@ -7,7 +7,7 @@ from apps.shared.models import ModelDefault
 class Product(ModelDefault):
 
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
     ean = models.CharField(max_length=13, unique=True)
     min_price = models.DecimalField(max_digits=10, decimal_places=2)
     max_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -15,6 +15,11 @@ class Product(ModelDefault):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+        ordering = ["name",]
 
 
 class PriceVariation(ModelDefault):
@@ -26,3 +31,8 @@ class PriceVariation(ModelDefault):
 
     def __str__(self):
         return f"{self.product.name}- {self.start_date} - {self.end_date}"
+
+    class Meta:
+        verbose_name = "Prices"
+        verbose_name_plural = "Prices"
+        ordering = ["start_date", 'end_date']

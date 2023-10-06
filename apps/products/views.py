@@ -20,7 +20,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
 
-        serializer = self.serializer_class_detail(instance)
+        serializer = self.serializer_class_detail(instance, context={"request": request})
         return Response(serializer.data)
 
     def destroy(self, request, *args, **kwargs):

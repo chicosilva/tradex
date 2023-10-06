@@ -1,10 +1,9 @@
 from rest_framework import status, viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-
 from apps.users.models import CustomUser
 from apps.users.serializers import RegisterSerializer
-
+from drf_yasg.utils import swagger_auto_schema
 
 class RegisterViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
