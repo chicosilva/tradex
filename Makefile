@@ -53,10 +53,10 @@ localdb:
 	@docker run --name tradex-postgres --rm -e POSTGRES_USER=tradex_dev -e POSTGRES_PASSWORD=tradex_dev -p 5432:5432 -it postgres:14.1-alpine
 
 docker-build:
-	@docker build -t application .
+	@docker build -t tradex-app .
 
 docker-run:
-	@docker run -it -p 8000:8000 application
+	@docker run -it -p 8000:8000 tradex-app
 
 # Tests Commands
 test:

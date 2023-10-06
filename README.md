@@ -32,7 +32,7 @@ This document presents the basic information of the **API - Tradex  **. For more
 ### Via Local 
 1. Clone the api repository:
     ```shell
-    git clone git@github.com:chicosilva/desafio-maistodos.git
+    git clone git@github.com:chicosilva/tradex.git
     ```
 
 2. Create Virtual Env:
@@ -94,7 +94,7 @@ This document presents the basic information of the **API - Tradex  **. For more
    
    | container             | port |
    |-----------------------|------|
-   | maistodos-app | 8000 |
+   | tradex-app | 8000 |
 
 # 4 Contacts
 
