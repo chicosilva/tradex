@@ -21,6 +21,9 @@ This document presents the basic information of the **API - Tradex  **. For more
 
 # 1. Product Overview 
 
+model:
+![alt text](modelo.jpeg)
+
 
 # 2. Endpoints List
 
