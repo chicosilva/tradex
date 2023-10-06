@@ -22,6 +22,7 @@ This document presents the basic information of the **API - Tradex  **. For more
 # 1. Product Overview 
 
 model:
+<br>
 ![alt text](modelo.jpeg)
 
 
